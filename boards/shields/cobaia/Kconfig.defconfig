@@ -1,6 +1,9 @@
 if SHIELD_COBAIA
 
 config ZMK_KEYBOARD_NAME
-    default "Test Mouse"
+    default "Lincoln's Mouse"
+
+config BT_DEVICE_APPEARANCE
+    default 962
 
 endif
