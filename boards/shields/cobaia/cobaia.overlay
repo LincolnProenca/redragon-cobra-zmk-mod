@@ -9,13 +9,6 @@
         zmk,underglow = &led_strip;
     };
 
-    ext-power {
-        compatible = "zmk,ext-power-generic";
-        label = "EXT_POWER";
-        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-        init-delay-ms = <50>;
-    };
-
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-direct";
         label = "KSCAN";
