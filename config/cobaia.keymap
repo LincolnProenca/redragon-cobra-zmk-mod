@@ -59,7 +59,7 @@
                 &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
                 &tog OFFICE        // 6: Top 2 (Toggle Layer)
                 &bt BT_NXT         // 7: Top 3 (Switch PC)
-                &soft_off          // 8: Bottom (ON/OFF)
+                &bootloader          // 8: Bottom (ON/OFF)
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -104,7 +104,7 @@
                 &kp LC(D)          
                 &tog OFFICE        
                 &bt BT_NXT         
-                &soft_off          
+                &bootloader          
             >;
             sensor-bindings = <&scroll_encoder>;
         };
