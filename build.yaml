@@ -21,3 +21,5 @@
 include:
   - board: nice_nano
     shield: cobaia
+  - board: nice_nano
+    shield: settings_reset
