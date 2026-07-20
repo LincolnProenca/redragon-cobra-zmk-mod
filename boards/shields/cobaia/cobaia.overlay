@@ -1,0 +1,146 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/led/led.h>
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <input/processors.dtsi>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,underglow = &led_strip;
+    };
+
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        label = "EXT_POWER";
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+        init-delay-ms = <50>;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+        wakeup-source;
+        input-gpios
+            = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* LMB */
+            , <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* RMB */
+            , <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* MMB */
+            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* SIDE_1 */
+            , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* SIDE_2 */
+            , <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* TOP_1 */
+            , <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* TOP_2 */
+            , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* TOP_3 */
+            , <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  /* BTN_INF */
+            ;
+    };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; /* SCROLL_A */
+        b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; /* SCROLL_B */
+        steps = <80>;
+        status = "okay";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
+
+    pmw3610_listener {
+        compatible = "zmk,input-listener";
+        device = <&pmw3610>;
+
+        /* If Layer 1 is active, multiply the speed by 4/5 (1000 -> 800 DPI) */
+        layer_slow {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 4 5>;
+        };
+
+        /* If Layer 2 is active, multiply the speed by 6/5 (1000 -> 1200 DPI) */
+        layer_fast {
+            layers = <2>;
+            input-processors = <&zip_xy_scaler 6 5>;
+        };
+    };
+};
+
+&pinctrl {
+    spi1_default: spi1_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,         /* SCLK */
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>,        /* SDIO (TX) */
+                    <NRF_PSEL(SPIM_MISO, 0, 10)>;        /* SDIO (RX) */
+        };
+    };
+
+    spi1_sleep: spi1_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 10)>;
+            low-power-enable;
+        };
+    };
+    
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 4)>;         /* LED_DIN */
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 4)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi1 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;               
+
+    pmw3610: pmw3610@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610-alt";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; 
+        
+        /* INPUT SUBSYSTEM UPDATE */
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        
+        /* BASE HARDWARE CPI DEFINITION */
+        cpi = <1000>;
+        
+        /* invert-x; */
+        invert-y;
+        /* swap-xy; */
+    };
+};
+
+&spi3 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+    
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        label = "WS2812";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+        chain-length = <6>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};

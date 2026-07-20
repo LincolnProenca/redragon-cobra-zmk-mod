@@ -1,0 +1,113 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+
+#define GAMING 0
+#define DPI_SLOW 1
+#define DPI_FAST 2
+#define OFFICE 3
+
+/ {
+    behaviors {
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <30>;
+        };
+    };
+
+    macros {
+        macro_align_center: macro_align_center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            tap-ms = <30>;
+            bindings = <&kp LC(DOT)>, <&kp C>, <&kp E>, <&kp N>, <&kp T>, <&kp E>, <&kp R>, <&kp RET>;
+        };
+
+        macro_dist_vert: macro_dist_vert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            tap-ms = <30>;
+            bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp R>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
+        };
+
+        macro_dpi_cycle: macro_dpi_cycle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&tog DPI_SLOW>, <&tog DPI_FAST>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        gaming_layer {
+            bindings = <
+                &mkp LCLK          // 0: Left Click
+                &mkp RCLK          // 1: Right Click
+                &mkp MCLK          // 2: Middle Click
+                &mkp MB4           // 3: Side 1 (Forward)
+                &mkp MB5           // 4: Side 2 (Back)
+                &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
+                &tog OFFICE        // 6: Top 2 (Toggle Layer)
+                &bt BT_NXT         // 7: Top 3 (Switch PC)
+                &soft_off          // 8: Bottom (ON/OFF)
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        dpi_slow_layer {
+            bindings = <
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &macro_dpi_cycle   
+                &trans
+                &trans
+                &trans
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        dpi_fast_layer {
+            bindings = <
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &tog DPI_FAST      
+                &trans
+                &trans
+                &trans
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        office_layer {
+            bindings = <
+                &mkp LCLK          
+                &mkp RCLK          
+                &mkp MCLK          
+                &macro_align_center
+                &macro_dist_vert   
+                &kp LC(D)          
+                &tog OFFICE        
+                &bt BT_NXT         
+                &soft_off          
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+    };
+};

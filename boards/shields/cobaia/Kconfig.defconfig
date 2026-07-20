@@ -1,0 +1,6 @@
+if SHIELD_COBAIA
+
+config ZMK_KEYBOARD_NAME
+    default "Test Mouse"
+
+endif
