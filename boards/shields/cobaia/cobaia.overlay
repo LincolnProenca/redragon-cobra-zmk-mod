@@ -119,8 +119,8 @@
         /* BASE HARDWARE CPI DEFINITION */
         cpi = <1000>;
         
-        /* invert-x; */
-        invert-y;
+        /* invert-y; */
+        invert-x;
         swap-xy;
     };
 };
