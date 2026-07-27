@@ -121,7 +121,7 @@
         
         /* invert-x; */
         invert-y;
-        /* swap-xy; */
+        swap-xy;
     };
 };
 
