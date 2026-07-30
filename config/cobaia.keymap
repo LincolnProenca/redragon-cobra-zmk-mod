@@ -15,7 +15,7 @@
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        bindings = <&msc MOVE_Y(20)>, <&msc MOVE_Y(-20)>;
         tap-ms = <40>;
     };
     };
