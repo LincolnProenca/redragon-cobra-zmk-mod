@@ -14,8 +14,9 @@
     behaviors {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc MOVE_Y(20)>, <&msc MOVE_Y(-20)>;
+        #sensor-binding-cells = <2>;
+        bindings = <&msc>, <&msc>;
+        tap-ms = <40>;
     };
     };
 
@@ -60,7 +61,7 @@
                 &bt BT_NXT         // 7: Top 3 (Switch PC)
                 &bootloader          // 8: Bottom (ON/OFF)
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(20) MOVE_Y(-20)>;
         };
 
         dpi_slow_layer {
@@ -75,7 +76,7 @@
                 &trans
                 &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(20) MOVE_Y(-20)>;
         };
 
         dpi_fast_layer {
@@ -90,7 +91,7 @@
                 &trans
                 &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(20) MOVE_Y(-20)>;
         };
 
         office_layer {
@@ -105,7 +106,7 @@
                 &bt BT_NXT         
                 &bootloader          
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(20) MOVE_Y(-20)>;
         };
 
     };
