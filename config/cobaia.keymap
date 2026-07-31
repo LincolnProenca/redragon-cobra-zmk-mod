@@ -16,7 +16,6 @@
         compatible = "zmk,behavior-sensor-rotate-var";
         #sensor-binding-cells = <2>;
         bindings = <&msc>, <&msc>;
-        tap-ms = <40>;
     };
     };
 
@@ -51,7 +50,7 @@
 
         gaming_layer {
             bindings = <
-                &mkp LCLK          // 0: Left Click
+                &mkp SCRL_UP          // 0: Left Click
                 &mkp RCLK          // 1: Right Click
                 &mkp MCLK          // 2: Middle Click
                 &mkp MB4           // 3: Side 1 (Forward)
