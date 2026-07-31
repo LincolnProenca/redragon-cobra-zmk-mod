@@ -37,9 +37,6 @@
         a-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* SCROLL_A */
         b-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* SCROLL_B */
         steps = <24>;
-        resolution = <4>;
-        debounce-press-ms = <15>;
-        debounce-release-ms = <15>;
         status = "okay";
     };
 
