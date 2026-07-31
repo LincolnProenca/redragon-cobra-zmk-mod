@@ -38,7 +38,8 @@
         b-gpios = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* SCROLL_B */
         steps = <24>;
         resolution = <4>;
-        debounce-period = <15>;
+        debounce-press-ms = <15>;
+        debounce-release-ms = <15>;
         status = "okay";
     };
 
