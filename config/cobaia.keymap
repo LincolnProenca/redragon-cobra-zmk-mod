@@ -61,7 +61,7 @@
                 &bt BT_NXT         // 7: Top 3 (Switch PC)
                 &bootloader          // 8: Bottom (ON/OFF)
             >;
-            sensor-bindings = <&scroll_encoder MOVE_Y(40) MOVE_Y(-40)>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
 
         dpi_slow_layer {
@@ -76,7 +76,7 @@
                 &trans
                 &trans
             >;
-            sensor-bindings = <&scroll_encoder MOVE_Y(40) MOVE_Y(-40)>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
 
         dpi_fast_layer {
@@ -91,7 +91,7 @@
                 &trans
                 &trans
             >;
-            sensor-bindings = <&scroll_encoder MOVE_Y(40) MOVE_Y(-40)>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
 
         office_layer {
@@ -106,7 +106,7 @@
                 &bt BT_NXT         
                 &bootloader          
             >;
-            sensor-bindings = <&scroll_encoder MOVE_Y(40) MOVE_Y(-40)>;
+            sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
 
     };
