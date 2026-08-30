@@ -22,7 +22,7 @@
     td_boot: tap_dance_boot {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>; // Tempo máximo (em ms) entre os dois cliques
+            tapping-term-ms = <250>;
             bindings = <&none>, <&bootloader>;
         };
     };
