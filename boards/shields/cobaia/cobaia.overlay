@@ -136,9 +136,9 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         spi-max-frequency = <4000000>;
-        chain-length = <6>;
+        chain-length = <9>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
-        color-mapping = <2 1 0>;
+        color-mapping = <2 1 3>;
     };
 };
