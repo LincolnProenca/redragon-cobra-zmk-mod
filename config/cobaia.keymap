@@ -18,6 +18,13 @@
         bindings = <&msc>, <&msc>;
         tap-ms = <40>;
     };
+
+    td_boot: tap_dance_boot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>; // Tempo máximo (em ms) entre os dois cliques
+            bindings = <&none>, <&bootloader>;
+        };
     };
 
     combos {
@@ -75,7 +82,7 @@
                 &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
                 &tog OFFICE        // 6: Top 2 (Toggle Layer)
                 &bt BT_NXT         // 7: Top 3 (Switch PC)
-                &bootloader          // 8: Bottom (ON/OFF)
+                &td_boot           // 8: Bottom (Double click for Bootloader)
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
@@ -120,7 +127,7 @@
                 &kp LC(D)          
                 &tog OFFICE        
                 &bt BT_NXT         
-                &bootloader          
+                &td_boot
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
