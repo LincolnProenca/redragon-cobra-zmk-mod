@@ -1,0 +1,233 @@
+(footprint "SW_D2F-FL"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -3.175 -4.445 0)
+		(layer "F.SilkS")
+		(uuid "7791be0c-9ea6-421f-a374-f09ea357245f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SW_D2F-FL"
+		(at -0.635 4.445 0)
+		(layer "F.Fab")
+		(uuid "8851df73-d728-467d-9959-336abefd92c7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "57c31bbd-28ee-4fcf-93da-13e96ad27288")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "14cc63e5-de39-4abc-bb17-b15296f161ff")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -6.4 -2.9)
+		(end 6.4 -2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dada2de4-adb7-48c2-9a70-83110b891a82")
+	)
+	(fp_line
+		(start -6.4 2.9)
+		(end -6.4 -2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ca369549-ba02-4a10-8a02-6097b67fbb6b")
+	)
+	(fp_line
+		(start 6.4 -2.9)
+		(end 6.4 2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b739ee35-12fa-4809-96ce-a19ec5aed10f")
+	)
+	(fp_line
+		(start 6.4 2.9)
+		(end -6.4 2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3138c3ef-c7d2-4b1b-aacf-5917c633bf59")
+	)
+	(fp_circle
+		(center -7.4 0.1)
+		(end -7.3 0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "6a4e9211-e3c9-4b67-965c-b02fd76f6424")
+	)
+	(fp_line
+		(start -6.65 -3.15)
+		(end 6.65 -3.15)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c7f21e00-7cf7-4b2d-8f3b-77e2cf752ef2")
+	)
+	(fp_line
+		(start -6.65 3.15)
+		(end -6.65 -3.15)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3e8c2799-9621-4caa-aba7-df691f4869e6")
+	)
+	(fp_line
+		(start 6.65 -3.15)
+		(end 6.65 3.15)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0eb64331-0bc4-46d2-9ae2-5df673aae75a")
+	)
+	(fp_line
+		(start 6.65 3.15)
+		(end -6.65 3.15)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "8cf5da79-5130-4b67-b720-208808d44447")
+	)
+	(fp_line
+		(start -6.4 -2.9)
+		(end 6.4 -2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "35fbd539-c84e-416c-86a1-852e4ec61a0c")
+	)
+	(fp_line
+		(start -6.4 2.9)
+		(end -6.4 -2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3a65b3f4-1333-453f-90bf-4dd959a8b9e0")
+	)
+	(fp_line
+		(start 6.4 -2.9)
+		(end 6.4 2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "46644315-652e-4670-b922-73144a57e788")
+	)
+	(fp_line
+		(start 6.4 2.9)
+		(end -6.4 2.9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "661d7112-94ba-42e6-bae7-7ae8962f34a1")
+	)
+	(fp_circle
+		(center -7.4 0.1)
+		(end -7.3 0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "8f2cd2a3-b5a8-4e8c-b199-22490e98269a")
+	)
+	(pad "COM" thru_hole circle
+		(at -5.08 0)
+		(size 1.8 1.8)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "1913cc98-28c2-40d6-89f6-d801059b5866")
+	)
+	(pad "NC" thru_hole circle
+		(at 5.08 0)
+		(size 1.8 1.8)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "de6d8545-5585-4e51-b70f-85d41773f264")
+	)
+	(pad "NO" thru_hole circle
+		(at 0 0)
+		(size 1.8 1.8)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "bb90dbc1-6c9d-4f65-9b19-26cceb90a10c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/MouseSwitch.pretty/D2F--3DModel-STEP-273799.STEP"
+		(offset
+			(xyz 3.25 0 1.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)
