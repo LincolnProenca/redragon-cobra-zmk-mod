@@ -22,7 +22,7 @@
     td_boot: tap_dance_boot {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&soft_off> , <&none> , <&bootloader>;
         };
     };
