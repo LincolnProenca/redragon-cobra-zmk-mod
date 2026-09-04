@@ -23,7 +23,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&none>, <&bootloader>;
+            bindings = <&none>, <&soft_off>, <&bootloader>;
         };
     };
 
