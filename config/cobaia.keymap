@@ -41,6 +41,12 @@
             key-positions = <1 2>; 
             bindings = <&rgb_ug RGB_EFF>;
         };
+
+        combo_bt_clear {
+            timeout-ms = <50>;
+            key-positions = <2 7>; 
+            bindings = <&bt BT_CLR>;
+        };
     };
 
     macros {
@@ -80,7 +86,7 @@
                 &mkp MB5           // 3: Side 1 (Back)
                 &mkp MB4           // 4: Side 2 (Forward)
                 &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
-                &tog OFFICE        // 6: Top 2 (Toggle Layer)
+                &to OFFICE         // 6: Top 2 (Toggle Layer)
                 &bt BT_NXT         // 7: Top 3 (Switch PC)
                 &td_boot           // 8: Bottom (Double click for Bootloader)
             >;
@@ -125,7 +131,7 @@
                 &macro_align_center
                 &macro_dist_vert   
                 &kp LC(D)          
-                &tog OFFICE        
+                &to OFFICE        
                 &bt BT_NXT         
                 &td_boot
             >;
