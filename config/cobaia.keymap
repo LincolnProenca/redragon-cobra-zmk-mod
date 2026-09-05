@@ -81,7 +81,7 @@
                 &mkp MB4           // 4: Side 2 (Forward)
                 &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
                 &tog OFFICE        // 6: Top 2 (Toggle Layer)
-                &bt BT_NXT         // 7: Top 3 (Switch PC)
+                &bt BT_CLR_ALL         // 7: Top 3 (Switch PC)
                 &td_boot           // 8: Bottom (Double click for Bootloader)
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
@@ -126,7 +126,7 @@
                 &macro_dist_vert   
                 &kp LC(D)          
                 &tog OFFICE        
-                &bt BT_NXT         
+                &bt BT_CLR_ALL         
                 &td_boot
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;

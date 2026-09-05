@@ -127,7 +127,7 @@
 };
 
 &spi3 {
-    status = "disabled";
+    status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
