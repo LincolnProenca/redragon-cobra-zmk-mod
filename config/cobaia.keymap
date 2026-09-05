@@ -125,14 +125,14 @@
 
         office_layer {
             bindings = <
-                &mkp LCLK          
-                &mkp RCLK          
-                &mkp MCLK          
+                &mkp LCLK
+                &mkp RCLK
+                &mkp MCLK
                 &macro_align_center
-                &macro_dist_vert   
-                &kp LC(D)          
-                &to OFFICE        
-                &bt BT_NXT         
+                &macro_dist_vert
+                &kp LC(D)
+                &to GAMING
+                &bt BT_NXT
                 &td_boot
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
