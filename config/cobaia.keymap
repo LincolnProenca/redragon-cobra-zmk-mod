@@ -9,6 +9,7 @@
 #define DPI_SLOW 1
 #define DPI_FAST 2
 #define OFFICE 3
+#define UTILITY 4
 
 / {
     behaviors {
@@ -40,12 +41,6 @@
             timeout-ms = <50>;
             key-positions = <1 2>; 
             bindings = <&rgb_ug RGB_EFF>;
-        };
-
-        combo_bt_clear {
-            timeout-ms = <50>;
-            key-positions = <2 7>; 
-            bindings = <&bt BT_CLR>;
         };
     };
 
@@ -87,8 +82,8 @@
                 &mkp MB4           // 4: Side 2 (Forward)
                 &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
                 &to OFFICE         // 6: Top 2 (Toggle Layer)
-                &bt BT_NXT         // 7: Top 3 (Switch PC)
-                &td_boot           // 8: Bottom (Double click for Bootloader)
+                &mo UTILITY        // 7: Top 3 (Utility Layer)
+                &td_boot           // 8: Bottom (Triple click for Bootloader)
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
@@ -132,8 +127,23 @@
                 &macro_dist_vert
                 &kp LC(D)
                 &to GAMING
-                &bt BT_NXT
+                &mo UTILITY
                 &td_boot
+            >;
+            sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
+        };
+
+        utility_layer {
+            bindings = <
+                &bt BT_SEL 0       // 0: Left     -> Force connection to PC 1
+                &bt BT_SEL 1       // 1: Right    -> Force connection to PC 2
+                &bt BT_CLR_ALL     // 2: Middle   -> Clear ALL slots (Full reset)
+                &bt BT_SEL 2       // 3: Side 1   -> Force connection to Phone/PC 3
+                &bt BT_SEL 3       // 4: Side 2   -> Force connection to PC 4
+                &trans             // 5: DPI_SLOW (No change)
+                &trans             // 6: OFFICE   (No change)
+                &trans             // 7: (The Top 3 button itself)
+                &trans             // 8: td_boot  (No change)
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
         };
