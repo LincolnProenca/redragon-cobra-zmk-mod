@@ -8,6 +8,15 @@
         zmk,kscan = &kscan0;
         zmk,underglow = &led_strip;
         zmk,pointing = &pmw3610;
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: battery-divider {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        io-channels = <&adc 2>;
+        output-ohms = <2000000>;
+        full-ohms = <(2000000 + 806000)>;
     };
 
     cobaia_ext_power: cobaia_ext_power {
