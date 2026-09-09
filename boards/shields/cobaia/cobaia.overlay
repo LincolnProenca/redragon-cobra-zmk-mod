@@ -8,15 +8,6 @@
         zmk,kscan = &kscan0;
         zmk,underglow = &led_strip;
         zmk,pointing = &pmw3610;
-        zmk,battery = &vbatt;
-    };
-
-    vbatt: battery-divider {
-        compatible = "zmk,battery-voltage-divider";
-        label = "BATTERY";
-        io-channels = <&adc 2>;
-        output-ohms = <2000000>;
-        full-ohms = <(2000000 + 806000)>;
     };
 
     cobaia_ext_power: cobaia_ext_power {
@@ -71,6 +62,14 @@
             input-processors = <&zip_xy_scaler 6 5>;
         };
     };
+};
+
+&vbatt {
+    compatible = "zmk,battery-voltage-divider";
+    label = "BATTERY";
+    io-channels = <&adc 2>;       /* SuperMini maps battery telemetry to AIN2 */
+    output-ohms = <2000000>;      /* 2M Ohm pull-down resistor */
+    full-ohms = <(2000000 + 806000)>; /* 2M + 806k Ohm divider total */
 };
 
 &pinctrl {
