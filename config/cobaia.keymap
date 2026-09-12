@@ -19,13 +19,6 @@
         bindings = <&msc>, <&msc>;
         tap-ms = <40>;
     };
-
-    macro_sleep: macro_sleep {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&macro_wait_time 0>;
-        };
-
     };
 
     combos {
@@ -70,75 +63,17 @@
             #binding-cells = <0>;
             wait-ms = <60>;
             tap-ms = <30>;
-            bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp N>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
-        };
-        
-        macro_dpi_slow_on: macro_dpi_slow_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                <&rgb_ug RGB_EFF>,
-                <&rgb_ug RGB_COLOR_HSB(60,100,50)>,
-                <&macro_sleep 600>, 
-                <&rgb_ug RGB_EFR>,
-                <&tog DPI_SLOW>;
+            bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp R>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
         };
 
         macro_dpi_cycle: macro_dpi_cycle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                <&rgb_ug RGB_EFF>,
-                <&rgb_ug RGB_COLOR_HSB(280,100,50)>,
-                <&macro_sleep 600>, 
-                <&rgb_ug RGB_EFR>,
-                <&tog DPI_SLOW>, <&tog DPI_FAST>;
-        };
-
-        macro_dpi_off: macro_dpi_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                <&rgb_ug RGB_EFF>,
-                <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
-                <&macro_sleep 600>, 
-                <&rgb_ug RGB_EFR>,
-                <&tog DPI_FAST>;
-        };
-
-        macro_to_gaming: macro_to_gaming {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                <&rgb_ug RGB_EFF>,  
-                <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
-                <&macro_sleep 600>, 
-                <&rgb_ug RGB_EFR>,
-                <&to GAMING>;
-        };
-
-        macro_to_office: macro_to_office {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                <&rgb_ug RGB_EFF>,
-                <&rgb_ug RGB_COLOR_HSB(240,100,50)>,
-                <&macro_sleep 600>, 
-                <&rgb_ug RGB_EFR>,
-                <&to OFFICE>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&tog DPI_SLOW>, <&tog DPI_FAST>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -150,8 +85,8 @@
                 &mkp MCLK          // 2: Middle Click
                 &mkp MB5           // 3: Side 1 (Back)
                 &mkp MB4           // 4: Side 2 (Forward)
-                &macro_dpi_slow_on // 5: DPI cycle enabled for Gaming (flash amarelo)
-                &macro_to_office   // 6: Top 2 (Toggle Layer, flash azul)
+                &tog DPI_SLOW      // 5: DPI cycle enabled for Gaming
+                &to OFFICE         // 6: Top 2 (Toggle Layer)
                 &mo UTILITY        // 7: Top 3 (Utility Layer)
                 &sys_reset         // 8: Bottom (immediate reset)
             >;
@@ -166,8 +101,8 @@
                 &trans
                 &trans
                 &macro_dpi_cycle   
-                &macro_to_office
-                &mo UTILITY
+                &trans
+                &trans
                 &trans
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
@@ -180,9 +115,9 @@
                 &trans
                 &trans
                 &trans
-                &macro_dpi_off      
-                &macro_to_office
-                &mo UTILITY
+                &macro_dpi_cycle
+                &trans
+                &trans
                 &trans
             >;
             sensor-bindings = <&scroll_encoder MOVE_Y(-40) MOVE_Y(40)>;
@@ -196,7 +131,7 @@
                 &macro_align_center
                 &macro_dist_vert
                 &kp LC(D)
-                &macro_to_gaming
+                &to GAMING
                 &mo UTILITY
                 &sys_reset
             >;
@@ -211,7 +146,7 @@
                 &bt BT_SEL 2       // 3: Side 1   -> Force connection to Phone/PC 3
                 &bt BT_SEL 3       // 4: Side 2   -> Force connection to PC 4
                 &trans             // 5: DPI_SLOW (No change)
-                &trans             // 6: OFFICE   (No change)
+                &to OFFICE         // 6: OFFICE   (No change)
                 &trans             // 7: (The Top 3 button itself)
                 &trans             // 8: sys_reset (No change)
             >;
