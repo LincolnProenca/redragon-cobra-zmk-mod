@@ -113,7 +113,7 @@
         gaming_layer {
             bindings = <
                 &rgb_ug RGB_TOG          // 0: Left Click
-                &ext_power EP_ON           // 1: Right Click
+                &ext_power EP_TOG           // 1: Right Click
                 &mkp MCLK          // 2: Middle Click
                 &mkp MB5           // 3: Side 1 (Back)
                 &mkp MB4           // 4: Side 2 (Forward)
