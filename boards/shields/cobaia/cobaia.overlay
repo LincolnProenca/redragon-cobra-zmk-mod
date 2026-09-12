@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
 
+/delete-node/ &ext_power;
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -10,9 +12,9 @@
         zmk,pointing = &pmw3610;
     };
 
-    cobaia_ext_power: cobaia_ext_power {
+    ext_power: ext_power {
         compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>, <&gpio1 11 GPIO_ACTIVE_LOW>;
         init-delay-ms = <300>;
     };
 
