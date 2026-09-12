@@ -13,7 +13,7 @@
     EXT_POWER: EXT_POWER {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>, <&gpio1 11 GPIO_ACTIVE_LOW>;
-        init-delay-ms = <50>;
+        init-delay-ms = <300>;
     };
 
     kscan0: kscan_0 {
