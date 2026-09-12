@@ -72,7 +72,10 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = 
+                <&rgb_ug RGB_EFF>,
                 <&rgb_ug RGB_COLOR_HSB(60,100,50)>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFR>,
                 <&tog DPI_SLOW>;
         };
 
@@ -82,7 +85,10 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = 
+                <&rgb_ug RGB_EFF>,
                 <&rgb_ug RGB_COLOR_HSB(280,100,50)>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFR>,
                 <&tog DPI_SLOW>, <&tog DPI_FAST>;
         };
 
@@ -92,7 +98,10 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = 
+                <&rgb_ug RGB_EFF>,
                 <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFR>,
                 <&tog DPI_FAST>;
         };
 
@@ -102,7 +111,10 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = 
+                <&rgb_ug RGB_EFF>,
                 <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFR>,
                 <&to GAMING>;
         };
 
@@ -112,7 +124,10 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = 
+                <&rgb_ug RGB_EFF>,
                 <&rgb_ug RGB_COLOR_HSB(240,100,50)>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFR>,
                 <&to OFFICE>;
         };
     };
