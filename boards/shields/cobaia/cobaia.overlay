@@ -12,7 +12,7 @@
 
     cobaia_ext_power: cobaia_ext_power {
         compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>, <&gpio1 11 GPIO_ACTIVE_LOW>;
         init-delay-ms = <300>;
     };
 
@@ -62,14 +62,6 @@
             input-processors = <&zip_xy_scaler 6 5>;
         };
     };
-};
-
-&vbatt {
-    compatible = "zmk,battery-voltage-divider";
-    label = "BATTERY";
-    io-channels = <&adc 2>;       /* SuperMini maps battery telemetry to AIN2 */
-    output-ohms = <2000000>;      /* 2M Ohm pull-down resistor */
-    full-ohms = <(2000000 + 806000)>; /* 2M + 806k Ohm divider total */
 };
 
 &pinctrl {
