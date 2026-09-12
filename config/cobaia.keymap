@@ -65,14 +65,6 @@
             tap-ms = <30>;
             bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp R>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
         };
-
-        macro_dpi_cycle: macro_dpi_cycle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&tog DPI_SLOW>, <&tog DPI_FAST>;
-        };
         
         macro_dpi_slow_on: macro_dpi_slow_on {
             compatible = "zmk,behavior-macro";
