@@ -63,7 +63,7 @@
             #binding-cells = <0>;
             wait-ms = <60>;
             tap-ms = <30>;
-            bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp R>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
+            bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp N>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
         };
         
         macro_dpi_slow_on: macro_dpi_slow_on {
@@ -71,7 +71,13 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(60,100,100)>, <&macro_wait_time 600>, <&rgb_ug RGB_EFR>, <&tog DPI_SLOW>;
+            bindings = 
+                <&rgb_ug RGB_OFF>,
+                <&rgb_ug RGB_COLOR_HSB(60,100,50)>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>,
+                <&tog DPI_SLOW>;
         };
 
         macro_dpi_cycle: macro_dpi_cycle {
@@ -79,7 +85,13 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(280,100,100)>, <&macro_wait_time 600>, <&rgb_ug RGB_EFR>, <&tog DPI_SLOW>, <&tog DPI_FAST>;
+            bindings = 
+                <&rgb_ug RGB_OFF>,
+                <&rgb_ug RGB_COLOR_HSB(280,100,50)>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>,
+                <&tog DPI_SLOW>, <&tog DPI_FAST>;
         };
 
         macro_dpi_off: macro_dpi_off {
@@ -87,7 +99,13 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>, <&macro_wait_time 600>, <&rgb_ug RGB_EFR>, <&tog DPI_FAST>;
+            bindings = 
+                <&rgb_ug RGB_OFF>,
+                <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>,
+                <&tog DPI_FAST>;
         };
 
         macro_to_gaming: macro_to_gaming {
@@ -95,7 +113,13 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>, <&macro_wait_time 600>, <&rgb_ug RGB_EFR>, <&to GAMING>;
+            bindings = 
+                <&rgb_ug RGB_OFF>,
+                <&rgb_ug RGB_COLOR_HSB(0,100,50)>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>,
+                <&to GAMING>;
         };
 
         macro_to_office: macro_to_office {
@@ -103,9 +127,16 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>, <&macro_wait_time 600>, <&rgb_ug RGB_EFR>, <&to OFFICE>;
+            bindings = 
+                <&rgb_ug RGB_OFF>,
+                <&rgb_ug RGB_COLOR_HSB(240,100,50)>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 600>, 
+                <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFF>,
+                <&to OFFICE>;
         };
     };
+
 
     keymap {
         compatible = "zmk,keymap";
