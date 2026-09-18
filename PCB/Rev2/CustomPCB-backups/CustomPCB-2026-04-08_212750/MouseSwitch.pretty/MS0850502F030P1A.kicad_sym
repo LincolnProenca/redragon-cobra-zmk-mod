@@ -1,0 +1,67 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "MS0850502F030P1A" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "S" (id 0) (at -5.09225 5.60147 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "MS0850502F030P1A" (id 1) (at -5.08865 -7.63298 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "MS0850502F030P1A:SW_MS0850502F030P1A" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "E-SWITCH" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "MS0850502F030P1A_0_0"
+      (circle (center 2.794 2.54) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center -2.286 0.0) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center 2.794 -2.54) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (polyline
+        (pts (xy -2.286 0.0) (xy 3.048 2.286)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 3.048 2.54) (xy 5.588 2.54)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 3.048 -2.54) (xy 5.588 -2.54)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -2.286 0.0) (xy -5.334 0.0)) (stroke (width 0.1524))
+      )
+      (rectangle (start -5.08 -5.08) (end 5.08 5.08)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at -7.62 0.0 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 7.62 -2.54 180.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 7.62 2.54 180.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)
