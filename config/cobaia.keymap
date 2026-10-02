@@ -17,7 +17,7 @@
         compatible = "zmk,behavior-sensor-rotate-var";
         #sensor-binding-cells = <2>;
         bindings = <&msc>, <&msc>;
-        tap-ms = <40>;
+        tap-ms = <15>;
     };
     };
 
@@ -26,19 +26,19 @@
 
         combo_soft_off {
             timeout-ms = <50>;
-            key-positions = <0 2>;   /* LMB + MMB */
+            key-positions = <5 6>;   /* TOP_1 + TOP_2 */
             bindings = <&soft_off>;
         };
 
         combo_rgb_toggle {
             timeout-ms = <50>;
-            key-positions = <2 3>;   /* MMB + SIDE_1 */
+            key-positions = <5 7>;   /* TOP_1 + TOP_3 */
             bindings = <&rgb_ug RGB_TOG>;
         };
 
         combo_rgb_effect {
             timeout-ms = <50>;
-            key-positions = <2 4>;   /* MMB + SIDE_2 */
+            key-positions = <6 7>;   /* TOP_2 + TOP_3 */
             bindings = <&rgb_ug RGB_EFF>;
         };
 
