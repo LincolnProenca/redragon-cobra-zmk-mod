@@ -55,7 +55,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <0>;
-            bindings = <&rgb_ug EP_OFF>, <&soft_off>;
+            bindings = <&ext_power EP_OFF>, <&soft_off>;
         };
 
         macro_align_center: macro_align_center {
