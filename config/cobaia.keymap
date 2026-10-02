@@ -27,7 +27,7 @@
         combo_soft_off {
             timeout-ms = <50>;
             key-positions = <5 6>;   /* TOP_1 + TOP_2 */
-            bindings = <&soft_off>;
+            bindings = <&macro_clean_soft_off>;
         };
 
         combo_rgb_toggle {
@@ -50,19 +50,27 @@
     };
 
     macros {
+        macro_clean_soft_off: macro_clean_soft_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <0>;
+            bindings = <&rgb_ug RGB_OFF>, <&soft_off>;
+        };
+
         macro_align_center: macro_align_center {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <60>;
-            tap-ms = <30>;
+            wait-ms = <70>;
+            tap-ms = <40>;
             bindings = <&kp LC(DOT)>, <&kp C>, <&kp E>, <&kp N>, <&kp T>, <&kp E>, <&kp R>, <&kp RET>;
         };
 
         macro_dist_vert: macro_dist_vert {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <60>;
-            tap-ms = <30>;
+            wait-ms = <70>;
+            tap-ms = <40>;
             bindings = <&kp LC(DOT)>, <&kp V>, <&kp E>, <&kp R>, <&kp T>, <&kp I>, <&kp C>, <&kp A>, <&kp L>, <&kp L>, <&kp Y>, <&kp RET>;
         };
 
