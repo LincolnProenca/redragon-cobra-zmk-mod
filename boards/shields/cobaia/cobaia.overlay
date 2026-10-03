@@ -10,6 +10,16 @@
         zmk,pointing = &pmw3610;
     };
 
+    /*
+     * LED power gating: two-stage level shifter.
+     * - A19T P-MOSFET switches B+ to the LED strip VCC (source=B+, drain=LED VCC,
+     *   10k pull-up between gate and source keeps it off by default).
+     * - The gate is driven by an SS8050 NPN (open-collector level shifter):
+     *   collector=gate, emitter=GND, base=GPIO 1.11 via ~1.4k.
+     * - GPIO high (3.3V) saturates the NPN, pulling the gate to GND (VGS=-B+,
+     *   full enhancement). GPIO low releases the gate to B+ via the 10k pull-up
+     *   (VGS=0, full cut-off at any battery voltage).
+     */
     EXT_POWER: EXT_POWER {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>, <&gpio1 11 GPIO_ACTIVE_HIGH>;
