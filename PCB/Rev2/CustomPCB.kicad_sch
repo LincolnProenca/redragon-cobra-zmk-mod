@@ -2151,52 +2151,34 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:AO3401A"
-			(pin_names
-				(hide yes)
-			)
+		(symbol "Power_Management:TPS22917DBV"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
+			(property "Reference" "U"
+				(at -6.35 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "AO3401A"
-				(at 5.08 0 0)
+			(property "Value" "TPS22917DBV"
+				(at 2.54 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -1.905 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-				(at 5.08 -3.81 0)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+				(at 0 12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2204,10 +2186,20 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps22917.pdf"
+				(at 1.27 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "1V to 5.5V, 2A, 80mΩ Ultra-Low Leakage Load Switch, SOT23-6"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2218,7 +2210,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "P-Channel MOSFET"
+			(property "ki_keywords" "high-side power distribution switch"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2240,178 +2232,24 @@
 					)
 				)
 			)
-			(symbol "AO3401A_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
+			(symbol "TPS22917DBV_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
+						(type background)
 					)
 				)
 			)
-			(symbol "AO3401A_1_1"
-				(pin input line
-					(at -5.08 0 0)
+			(symbol "TPS22917DBV_1_1"
+				(pin power_in line
+					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "G"
+					(name "VIN"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2426,10 +2264,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 2.54 -5.08 90)
+				(pin power_in line
+					(at 0 -7.62 90)
 					(length 2.54)
-					(name "S"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2444,10 +2282,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 2.54 5.08 270)
+				(pin input line
+					(at -10.16 -2.54 0)
 					(length 2.54)
-					(name "D"
+					(name "ON"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2455,6 +2293,60 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "CT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "QOD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4101,12 +3993,6 @@
 		(uuid "0df98810-7f1d-42da-ac4e-d986be55d84c")
 	)
 	(junction
-		(at 250.19 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1120095c-cdb7-4d69-93ad-4f347c0f3d60")
-	)
-	(junction
 		(at 77.47 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4131,6 +4017,12 @@
 		(uuid "2ffb65bf-8ddf-4e29-993b-5192bb23559e")
 	)
 	(junction
+		(at 241.3 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a6a4470-aaee-4080-9a59-5fc0dba8b703")
+	)
+	(junction
 		(at 90.17 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4149,10 +4041,16 @@
 		(uuid "4956cd88-6830-443a-8d47-180a33a9b224")
 	)
 	(junction
-		(at 257.81 63.5)
+		(at 269.24 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4b95e2c0-5357-4785-9a26-ce74d30ed967")
+		(uuid "71221d35-5c8b-4274-8dda-3b4ff6da9744")
+	)
+	(junction
+		(at 264.16 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "80ff688c-3e2d-4582-b16c-2d0905245305")
 	)
 	(junction
 		(at 95.25 26.67)
@@ -4272,6 +4170,26 @@
 		)
 		(uuid "18d29dde-cea1-4b2a-9ec4-d7622d2c258b")
 	)
+	(wire
+		(pts
+			(xy 264.16 60.96) (xy 264.16 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c15a9f1-af89-4207-a940-eb7f6873dc01")
+	)
+	(wire
+		(pts
+			(xy 269.24 60.96) (xy 271.78 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2214a0ca-7482-4bd4-8642-2db1c874c9cd")
+	)
 	(polyline
 		(pts
 			(xy 165.1 82.55) (xy 165.1 153.67)
@@ -4321,16 +4239,6 @@
 			(type default)
 		)
 		(uuid "2f63ba1d-a333-4ec5-920f-25b16e03bc42")
-	)
-	(wire
-		(pts
-			(xy 248.92 57.15) (xy 250.19 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "302f2153-ac03-41cc-954b-fd1d0559f82a")
 	)
 	(wire
 		(pts
@@ -4431,16 +4339,6 @@
 			(type default)
 		)
 		(uuid "44f10782-6b95-457b-a422-e86804e5953d")
-	)
-	(wire
-		(pts
-			(xy 257.81 63.5) (xy 250.19 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "46ebca21-44c5-4e26-8181-0c7dfa72a52c")
 	)
 	(wire
 		(pts
@@ -4614,6 +4512,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 60.96) (xy 241.3 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e6284d8-f4d2-457e-a6e6-30b3ab37561b")
+	)
+	(wire
+		(pts
 			(xy 43.18 62.23) (xy 59.69 62.23)
 		)
 		(stroke
@@ -4694,13 +4602,13 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 62.23) (xy 257.81 63.5)
+			(xy 269.24 63.5) (xy 269.24 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "91df6fbc-0db4-4f14-b462-26c4ee2de87a")
+		(uuid "96b76924-f4bd-4c28-851e-9f0a61d28409")
 	)
 	(wire
 		(pts
@@ -4721,6 +4629,16 @@
 			(type default)
 		)
 		(uuid "9b32f3cf-d3b5-4963-aa59-b4a21115a084")
+	)
+	(wire
+		(pts
+			(xy 241.3 60.96) (xy 243.84 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9da6fb33-97e1-4ef8-9ac5-df8001029ab6")
 	)
 	(polyline
 		(pts
@@ -4844,6 +4762,26 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 58.42) (xy 241.3 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0fc25b4-7d2a-4376-97de-e5c332d94eb2")
+	)
+	(wire
+		(pts
+			(xy 264.16 60.96) (xy 269.24 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c308b21e-62c5-41cd-b783-59137bcb28fb")
+	)
+	(wire
+		(pts
 			(xy 43.18 26.67) (xy 59.69 26.67)
 		)
 		(stroke
@@ -4894,16 +4832,6 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 63.5) (xy 257.81 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "daf52840-cfa2-4805-961b-f97c56dc0588")
-	)
-	(wire
-		(pts
 			(xy 110.49 57.15) (xy 87.63 57.15)
 		)
 		(stroke
@@ -4951,16 +4879,6 @@
 			(type default)
 		)
 		(uuid "dfe75b6d-2308-4243-abde-312021cbb0bb")
-	)
-	(wire
-		(pts
-			(xy 250.19 57.15) (xy 250.19 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e065a856-56a9-454b-a28c-8c169a830579")
 	)
 	(wire
 		(pts
@@ -5340,7 +5258,7 @@
 			)
 		)
 	)
-	(global_label "GATE"
+	(global_label "LED_CTRL"
 		(shape input)
 		(at 243.84 130.81 0)
 		(fields_autoplaced yes)
@@ -5352,7 +5270,7 @@
 		)
 		(uuid "1b9aa4ac-bd6e-4395-91c3-6f2fc31119a8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 251.3004 130.81 0)
+			(at 255.7756 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5438,7 +5356,7 @@
 	)
 	(global_label "LED_VCC"
 		(shape input)
-		(at 257.81 52.07 90)
+		(at 271.78 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5448,7 +5366,7 @@
 		)
 		(uuid "355cbaf9-3a08-4568-82d6-cda7456bc170")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.81 41.0415 90)
+			(at 282.8085 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5604,9 +5522,9 @@
 			)
 		)
 	)
-	(global_label "GATE"
+	(global_label "LED_CTRL"
 		(shape input)
-		(at 248.92 57.15 180)
+		(at 243.84 66.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5616,7 +5534,7 @@
 		)
 		(uuid "54099e82-0d3c-4df0-bbea-87f476a294ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.4596 57.15 0)
+			(at 231.9044 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6134,7 +6052,7 @@
 	)
 	(global_label "BAT+"
 		(shape input)
-		(at 257.81 64.77 270)
+		(at 237.49 60.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6144,7 +6062,7 @@
 		)
 		(uuid "d968362a-eb89-4f04-b93f-b0c3e5c5b2dc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.81 72.6538 90)
+			(at 229.6062 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9510,6 +9428,82 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 241.3 53.34 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7f5e9ce-6fd5-4844-9f0c-f2c7d3c3b12c")
+		(property "Reference" "#PWR025"
+			(at 241.3 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 49.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fe490508-e1e9-4e9c-a602-5cb05cbf3b7f")
+		)
+		(instances
+			(project "CustomPCB"
+				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 241.3 26.67 90)
 		(unit 1)
 		(body_style 1)
@@ -10133,6 +10127,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 254 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d387c577-b6a3-48d9-b4d5-2d1d341a2adf")
+		(property "Reference" "#PWR023"
+			(at 254 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 254 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 254 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7fe86ffb-7870-4a26-afcd-36a8b7bd55c1")
+		)
+		(instances
+			(project "CustomPCB"
+				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 77.47 118.11 270)
 		(unit 1)
@@ -10335,6 +10405,109 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
+		(at 269.24 66.04 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d889b9ba-b36a-459f-a4b2-c35e901e30bb")
+		(property "Reference" "C12"
+			(at 275.59 64.516 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 277.876 66.802 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 269.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C14663"
+			(at 269.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFR. Part #" "CC0603KRX7R9BB104"
+			(at 269.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c95c06d7-c6a8-49a7-86cb-0131ff06996b")
+		)
+		(pin "2"
+			(uuid "e6acbb38-1fb4-4efc-ae2f-c2824a9e0448")
+		)
+		(instances
+			(project "CustomPCB"
+				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
 		(at 66.04 123.19 0)
 		(unit 1)
 		(body_style 1)
@@ -10436,6 +10609,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 241.3 55.88 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dd615d4e-db52-4142-837b-7f8ee866778b")
+		(property "Reference" "C11"
+			(at 238.76 54.6163 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 238.76 57.1563 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 241.3 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Part #" ""
+			(at 241.3 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFR. Part #" ""
+			(at 241.3 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa0ab1e8-8aaf-44ac-bcfd-393e27d0a10e")
+		)
+		(pin "2"
+			(uuid "38e065cc-2d91-43e9-b644-b3f79807d36f")
+		)
+		(instances
+			(project "CustomPCB"
+				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 191.77 49.53 0)
 		(unit 1)
@@ -10512,8 +10788,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 250.19 60.96 0)
+		(lib_id "Power_Management:TPS22917DBV")
+		(at 254 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10521,31 +10797,30 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "e6d35ce2-7ad1-4d9c-bd9e-f14d36d69186")
-		(property "Reference" "R2"
-			(at 252.73 59.69 0)
+		(fields_autoplaced yes)
+		(uuid "e70a92ff-d30c-4968-a2b2-66b27063523c")
+		(property "Reference" "U4"
+			(at 254 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "10k"
-			(at 252.73 62.23 0)
+		(property "Value" "TPS22917DBV"
+			(at 254 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 250.19 60.96 0)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 254 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10555,8 +10830,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 250.19 60.96 0)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps22917.pdf"
+			(at 255.27 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10566,31 +10841,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 252.73 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "JLCPCB Part #" "C25804"
-			(at 250.19 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFR. Part #" "0603WAF1002T5E"
-			(at 250.19 60.96 0)
+		(property "Description" "1V to 5.5V, 2A, 80mΩ Ultra-Low Leakage Load Switch, SOT23-6"
+			(at 254 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10601,15 +10853,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "6c3d5e0f-978a-40ba-bb6c-7e59479c6b4c")
+			(uuid "39204441-3183-42a0-ace9-97a063caa562")
+		)
+		(pin "6"
+			(uuid "feebb885-fe37-4fd4-a1b6-348d99897b46")
+		)
+		(pin "3"
+			(uuid "f4153b98-2d1e-46c2-98f3-2fa513588ee3")
+		)
+		(pin "5"
+			(uuid "2be75bf3-d490-4716-a739-aecf121cbf94")
 		)
 		(pin "2"
-			(uuid "35a6f930-4233-4bba-8f47-59ca43da7b0c")
+			(uuid "62ee5ff7-0295-454d-af24-54a6be793989")
+		)
+		(pin "4"
+			(uuid "45510d52-944c-40fd-9f00-45e36db5c408")
 		)
 		(instances
 			(project "CustomPCB"
 				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
-					(reference "R2")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -10763,94 +11027,6 @@
 			(project "CustomPCB"
 				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:AO3401A")
-		(at 255.27 57.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "edf4170f-72b3-4646-a669-9917486b1ac3")
-		(property "Reference" "Q1"
-			(at 261.62 55.8799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AO3401A"
-			(at 261.62 58.4199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 260.35 59.055 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
-			(at 260.35 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
-			(at 255.27 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "274c0e6e-b312-49af-8721-26640b087245")
-		)
-		(pin "2"
-			(uuid "fc8e1add-d514-4095-9d9e-f34302f562e6")
-		)
-		(pin "1"
-			(uuid "23c6df5b-f61e-4edf-83d1-4877a1bdc593")
-		)
-		(instances
-			(project "CustomPCB"
-				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -11135,6 +11311,82 @@
 			(project "CustomPCB"
 				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f847c71f-8c8f-4b1e-98a8-6aaad96807ab")
+		(property "Reference" "#PWR027"
+			(at 269.24 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 269.24 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab53c2fb-3976-4128-9ab9-02485ef41515")
+		)
+		(instances
+			(project "CustomPCB"
+				(path "/0a24e726-7b2f-42a2-8e64-ccc5f26dfd32"
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)

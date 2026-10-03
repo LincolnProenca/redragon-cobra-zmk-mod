@@ -100,10 +100,16 @@ When powering up the board, the nRF52 has floating pins that injected noise into
 
 ### 8. PCB Rev1 Limitations & Rev2 Updates
 
-**Known Limitation:** Revision 1 (rev1) of the custom PCB does not natively route the Battery (B+) directly to the LED's VCC, nor does it include footprints for the A19T MOSFET and 10k resistor power-gating circuit. These modifications had to be manually bodged (hardwired) onto the physical board.
+**Known Limitation (Rev1):** Revision 1 (rev1) of the custom PCB does not natively route the Battery (B+) directly to the LED's VCC, nor does it include footprints for the power-gating circuit. These modifications (A19T P-MOSFET, SS8050 NPN, and resistors) had to be manually bodged (hardwired) onto the physical board.
+
+**Rev2 Architecture Overhaul:** To eliminate the bulky discrete transistor assembly, the **Revision 2 (rev2)** of the PCB replaces the entire BJT+MOSFET circuit with a single **TPS22917DBV Load Switch** (SOT-23-6). 
+
+- **How it works:** The raw battery line (B+) connects directly to `VIN`, and the MCU's `EXT_POWER` pin (GPIO 1.11) drives the `ON` pin directly. Since the TPS22917 features an internal smart level-shifter, it seamlessly interfaces a 3.3V GPIO with the fluctuating 3.0V–4.2V battery rail, ensuring a clean cut-off with sub-microampere leakage current.
+- **Quick Discharge:** The `QOD` pin is tied directly to `VOUT` to leverage the internal 150Ω discharge resistor, instantly draining the LED strip's capacitors during sleep transitions.
 
 > [!WARNING]
-> **Rev2 Disclaimer:** A `rev2` version of the PCB design has been added to this repository incorporating these native traces and footprints. However, **this revision has not been physically tested yet and does not include the latest NPN transistor addition**. If you plan to manufacture it, please review the gerbers and schematics carefully before proceeding.
+> **Rev2 Disclaimer:** While the Rev2 layout integrates these native traces, capacitors (1μ F input / 0.1μ F output), and the SOT-23-6 footprint, **this board revision has not been physically manufactured or tested yet**. If you plan to order it, please review the schematics and Gerber files carefully.
+
 
 ---
 
